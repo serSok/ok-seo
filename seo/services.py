@@ -106,4 +106,4 @@ def get_url_seo_by_match_type(request: 'HttpRequest') -> Optional['UrlSeo']:
             if url_match:
                 return url_seo
 
-    return objects.first()
+    return objects.filter(is_default=True).first()
